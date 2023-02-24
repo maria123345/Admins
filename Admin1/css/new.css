@@ -214,7 +214,7 @@ aside .sidebar a.active span{
 }
 
 aside .sidebar a:hover{
-    color: var(--color-primary);
+    color: var(--bs-danger);
 }
 
 aside .sidebar a:hover span{
@@ -249,94 +249,6 @@ main .date input[type="date"]{
     /* color: var(--color-dark-variant); */
 }
 
-main .insights{
-    display: grid;
-    grid-template-columns: repeat(3, 2fr); 
-     gap: 1.6rem; 
-}
-
-main .insights > div{
-    background: var(--color-white);
-    padding: var(--box-padding);
-    border-radius: var(--card-border-radius);
-    margin-top: 1rem;
-    box-shadow: var(--box-shadow);
-    transition: all 300ms ease;
-}
-main .insights > div:hover{
-    box-shadow: none;
-}
-main .insights > div span {
-     background: var(--color-primary); 
-    padding: 0.5rem;
-    border-radius: 50%;
-    color: var(--color-white);
-    font-size: 2rem;
-}
-
-main .insights > div.expenses span{
-    background: var(--color-danger);
-
-}
-
-
-main .insights > div.incomes span{
-    background: var(--color-success);
-}
-
-
-main .insights > div.incomes span{
-    background: var(--color-success);
-}
-main .insights > div .middle {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}  
-
-main .insights h3{
-    margin: 1rem 0 0.6rem;
-    font-size:  1rem;
-}
- main .insights .progress {
-    position: relative;
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-} 
-
-main .insights svg{
-  
-    width: 7rem;
-    height: 7rem;
-}
-
-main .insights svg circle {
-    fill:none;
-    stroke: var(--color-primary);
-    stroke-width: 14;
-    stroke-linecap: round;
-    transform: translate(5px , 5px);
-    stroke-dashoffset: 92;
-    stroke-dasharray: 110;
-
-}
-
-main .insights .sales svg circle{
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .insights .progress .number{
-    position:absolute;
-    top:0;
-    left:0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 /* ============Recent ORDERS================= */
@@ -377,6 +289,114 @@ main .recent-orders a {
     display: block;
     margin: 1rem auto ;
     color: var(--color-primary);
+}
+
+
+
+
+/* ====================  Recent Update ========================= */
+
+main .recent-updates{
+    margin-top: 1rem;
+    /* display: flex; */
+
+
+}
+
+
+main .recent-updates h2{
+    margin-bottom: 0.8rem;
+  
+}
+
+main .recent-updates .updates{
+    background: var(--color-white);
+    padding:1.8rem;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+main .recent-updates .updates:hover{
+    box-shadow: none;
+}
+
+main .recent-updates .updates .update {
+
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 4rem;
+    margin-bottom: 1rem;
+}
+
+
+/* =============  SALES ANALYTICS    ==================== */
+
+main .sales-analytics {
+    margin-top: 2rem;
+
+}
+
+main .sales-analytics h2 {
+    margin-bottom: 0.8rem;
+
+}
+
+main .sales-analytics .item{
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.8rem;
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+main .sales-analytics .item:hover{
+    box-shadow: none;
+}
+
+main .sales-analytics .item .right{
+ display: flex;
+ justify-content: space-between;
+ align-items: start;
+ margin: 0;
+ width: 100%;
+}
+
+main .sales-analytics .item .icon{
+
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+}
+
+main .sales-analytics .item.offline .icon{
+    background: var(--color-danger);
+}
+main .sales-analytics .item.Customer .icon{
+    background: var(--color-success);
+}
+
+main .sales-analytics .item.add-payment {
+    background-color: transparent;
+    border: 2px dashed var(--color-primary);
+    color : var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main .sales-analytics .item.add-payment div{
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+
+}
+
+main .sales-analytics .item.add-payment div h3{
+    font-size: 600;
 }
 
 /* =========== Right  =========== */
@@ -427,118 +447,108 @@ main .recent-orders a {
     text-align: right;
 }
 
-/* ====================  Recent Update ========================= */
 
-.right .recent-updates{
-    margin-top: 1rem;
-}
-.right .recent-updates h2{
-    margin-bottom: 0.8rem;
-}
 
-.right .recent-updates .updates{
-    background: var(--color-white);
-    padding:1.8rem;
-    border-radius: var(--card-border-radius);
-    box-shadow: var(--box-shadow);
-    transition: all 300ms ease;
-}
-.right .recent-updates .updates:hover{
-    box-shadow: none;
-}
 
-.right .recent-updates .updates .update {
-
+.right .insights{
     display: grid;
-    grid-template-columns: 2.6rem auto;
-    gap: 1rem;
-    margin-bottom: 1rem;
+   
+     gap: 1.6rem; 
 }
 
-
-/* =============  SALES ANALYTICS    ==================== */
-
-.right .sales-analytics {
-    margin-top: 2 rem;
-
-}
-
-.right .sales-analytics h2 {
-    margin-bottom: 0.8rem;
-
-}
-
-.right .sales-analytics .item{
+.right .insights > div{
     background: var(--color-white);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 0.7rem;
-    padding: 1.8rem;
-    border-radius: var(--border-radius-3);
+    padding: var(--box-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
 }
-.right .sales-analytics .item:hover{
+.right .insights > div:hover{
     box-shadow: none;
 }
-
-.right .sales-analytics .item .right{
- display: flex;
- justify-content: space-between;
- align-items: start;
- margin: 0;
- width: 100%;
-}
-
-.right .sales-analytics .item .icon{
-
-    padding: 0.6rem;
-    color: var(--color-white);
+.right .insights > div span {
+     background: var(--color-primary); 
+    padding: 0.5rem;
     border-radius: 50%;
-    background: var(--color-primary);
-    display: flex;
+    color: var(--color-white);
+    font-size: 2rem;
 }
 
-.right .sales-analytics .item.offline .icon{
+.right .insights > div.expenses span{
     background: var(--color-danger);
+
 }
-.right .sales-analytics .item.Customer .icon{
+
+
+.right .insights > div.incomes span{
     background: var(--color-success);
 }
 
-.right .sales-analytics .item.add-payment {
-    background-color: transparent;
-    border: 2px dashed var(--color-primary);
-    color : var(--color-primary);
+
+.right .insights > div.incomes span{
+    background: var(--color-success);
+}
+.right .insights > div .middle {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}  
+
+.right .insights h3{
+    margin: 1rem 0 0.6rem;
+    font-size:  1rem;
+}
+.right .insights .progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+} 
+
+.right .insights svg{
+  
+    width: 7rem;
+    height: 7rem;
+}
+
+.right .insights svg circle {
+    fill:none;
+    stroke: var(--color-primary);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px , 5px);
+    stroke-dashoffset: 92;
+    stroke-dasharray: 110;
+
+}
+
+.right .insights .sales svg circle{
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.right .insights .progress .number{
+    position:absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
     justify-content: center;
-}
-.right .sales-analytics .item.add-payment div{
-    display: flex;
     align-items: center;
-    gap: 0.6em;
-
 }
 
-.right .sales-analytics .item.add-payment div h3{
-    font-size: 600;
-}
+
 
 
 /* ================ Media QUERIES ======================= */
 
 @media only screen and (max-width: 768px) {
-    h3{
-        color: red;
-    }
-/* body{
-        background-color: red;
-    } */
+ 
 
    
-/* .container{
+.container{
         width: 100%;
       grid-template-columns: 1fr;
     }
@@ -550,7 +560,7 @@ main .recent-orders a {
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
-        box-shadow: 1rem 3rem 4rem var(--card-light);
+        box-shadow: 1rem 3rem 4rem cornflowerblue;
         height: 100vh;
         padding-right: var(--card-padding);
     }
@@ -565,6 +575,15 @@ aside .logo h3{
 }
 aside .sidbar a{
     width: 100%;
+}
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 5rem;
+    
+}
+aside .close{
+    display: inline-block;
+    cursor: pointer;
 }
    
 .right{
@@ -582,7 +601,7 @@ aside .sidbar a{
     width: 100%;
     margin: 0;
     z-index: 2;
-    box-shadow: 0 1rem 1rem var(--bs-light);
+    box-shadow: 0 1rem 1rem cornflowerblue;
 }
 
 .right .top .theme-toggler{
@@ -592,5 +611,5 @@ aside .sidbar a{
 }
 .right .profile .info{
     display: none;
-} */
+} 
 }
