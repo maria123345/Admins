@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,800;1,800&display=swap');
-
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -25,29 +24,36 @@
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --color-primary:#7649a0;
-    --color-danger:#ac1e2a;
-    --color-success:#0bd3a1;
-    --color-warning:#ffbb55;
-    --color-white:#fff;
-    --color-info-dark:#363949;
-    --color-info-light:#f4f6f8;
-    --color-dark:#292424;
-    --color-light:rgb(96, 100, 114);
-    --color-primary-variant:#0a0457;
-    --color-dark-variant:#5e5b5b;
-    --color-background:#3b3b80;
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
 
     --card-border-radius: 2rem;
     --border-radius-1: 0.4rem;
     --border-radius-2: 0.8rem;
     --border-radius-3: 1.2rem;
 
-    --box-shadow: 0 2rem 3rem var(--bs-light);
-    --box-padding: 1.8rem;
+    --card-padding: 1.8rem;
     --padding-1: 1.2rem;
-  
 
+    --box-shadow: 0 2rem 3rem var(--color-light)
+}
+.dark.theme-variables{
+    --color-background:#181a1e;
+    --color-white:#202528;
+    --color-dark:#edeffd;
+    --color-dark-variant:#a3bdcc;
+    --color-light:rgba(0,0,0,0.4);
+    --box-shadow: 0.2rem 3rem var(var(--bs-light)))
 }
 
 *{
@@ -544,48 +550,117 @@ main .sales-analytics .item.add-payment div h3{
 
 /* ================ Media QUERIES ======================= */
 
-@media only screen and (max-width: 768px) {
- 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media screen and (max-width: 1200px) {
 
-   
-.container{
-        width: 100%;
-      grid-template-columns: 1fr;
+    .container{
+        width: 94%;
+      grid-template-columns: 7rem auto 23rem;
     }
 
+    aside .logo h2{
+        display: none;
+    }
+    aside .sidebar h3{
+        display: none;
+    }
+    aside .sidebar a{
+        width: 5.6rem;
+    }
+    aside .sidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+    main .insights{
+        grid-template-columns: 1fr ;
+        gap: 0;
+    }
+    main .recent-orders{
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 8.8rem;
+    }
+    main .recent-orders table{
+        width: 83vw;
+    }
+    main table thead tr th:last-child, main table thead tr th:last-child{
+        display: none;
+    }
+    main table thead tr td:last-child, main table thead tr td:last-child{
+        display: none;
+    }
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+    
+    .container{
+        width: 100%;
+    grid-template-columns: 1fr;
+    }
     aside{
 
         position: fixed;
-        left:0;
+        left:-100%;
         background: var(--color-white);
         width: 18rem;
         z-index: 3;
-        box-shadow: 1rem 3rem 4rem cornflowerblue;
+        box-shadow: 1rem 3rem 4rem var(--card-light);
         height: 100vh;
         padding-right: var(--card-padding);
+        display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+        
     }
     aside .logo {
-      margin-left: 1rem;
+        margin-left: 1rem;
+      }
+      aside .logo h2{
+        display: inline;
     }
-    aside .logo h2{
-    display: inline;
+    aside .sidebar h3{
+        display: inline;
+    }
+    aside .sidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+    aside .sidebar a:last-child{
+        position: absolute;
+        bottom: 5rem;
+    }
+    aside .close{
+        display: inline-block;
+        cursor: pointer;
+    } 
+ 
+main 
+{
+    margin-top: 8rem;
+    padding: 0.1rem;
 }
-aside .logo h3{
-    display: inline;
-}
-aside .sidbar a{
+main .recent-orders{
     width: 100%;
-}
-aside .sidebar a:last-child{
-    position: absolute;
-    bottom: 5rem;
-    
-}
-aside .close{
-    display: inline-block;
-    cursor: pointer;
-}
+    position: relative;
    
+    margin: 3rem 0 0 0;
+}
+main .recent-orders table{
+        width: 100%;
+        margin: 0 ;
+}
+
+  
 .right{
     width: 94%;
     margin: 0 auto 4rem;
@@ -601,7 +676,7 @@ aside .close{
     width: 100%;
     margin: 0;
     z-index: 2;
-    box-shadow: 0 1rem 1rem cornflowerblue;
+    box-shadow: 0 1rem 1rem var(--bs-light);
 }
 
 .right .top .theme-toggler{
@@ -612,4 +687,18 @@ aside .close{
 .right .profile .info{
     display: none;
 } 
+.right .top button{
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--bs-dark);
+    position: absolute;
+    left: 1rem;
+}
+.right .top button span{
+    font-size: 2rem;
+}
+
+
+
 }
